@@ -1,0 +1,182 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(SS.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(1.75px);
+  -webkit-backdrop-filter: blur(1.7px);
+  width: 15vh;
+  min-width: 270px;
+  background-color: rgba(185, 190, 195, 0.3);
+  border: 2px solid rgba(215, 217, 219, 0.3);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  animation: effect 2s ease forwards;
+}
+
+@keyframes effect {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.header {
+  text-align: center;
+  font-size: 1.68rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 1rem;
+  animation: newEffect 1.9s ease forwards;
+}
+@keyframes newEffect {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.addTask {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0.2rem;
+  padding: 0.1rem;
+  margin: 0.5rem;
+  animation: newEffect 1.9s ease forwards;
+}
+
+.addTask input {
+  width: 100%;
+  flex: 1;
+  padding: 0.5rem;
+  border: 1.5px solid rgba(183, 186, 189, 0.445);
+  background-color: rgba(200, 203, 206, 0.3);
+  border-radius: 0.5rem;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #d5cdcd;
+}
+
+.addTask button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 13px;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  color: #fff;
+  border: none;
+  font-size: 0.8rem;
+  background-color: rgba(38, 11, 244, 0.7);
+  cursor: pointer;
+  outline: none;
+}
+
+ul {
+  margin: 1rem 0;
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  border-bottom: 0.1px solid whitesmoke;
+  color: #fff;
+  background-color: rgba(200, 203, 206, 0.2);
+  width: auto;
+  opacity: 0;
+  animation: fadeSlideIn 0.4s forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.addTask button:hover,
+li button:hover {
+  background: rgba(111, 99, 196, 0.948);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.task-content span {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.check {
+  font-size: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.delete {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.17rem;
+  margin-left: 15px;
+}
+
+.remove {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
